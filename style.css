@@ -46,7 +46,7 @@ body {
   z-index: 1;
 }
 
-/* V seam (rotated for realism) */
+/* V seam (rotated) */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -61,7 +61,7 @@ body {
   z-index: 2;
 }
 
-/* Flap - rotated 180° for realistic top orientation */
+/* Flap adjusted for new orientation */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -71,15 +71,15 @@ body {
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
   border-bottom: 160px solid #f497af;
-  transform: rotate(180deg);
-  transform-origin: bottom center; /* pivot bottom center */
-  transition: transform 0.6s ease;
+  transform: rotate(180deg);             /* initial closed position */
+  transform-origin: top center;          /* pivot at fold */
+  transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .flap-open {
-  transform: rotate(180deg) rotateX(-180deg); /* swings open */
+  transform: rotate(180deg) rotateX(180deg); /* opens upward naturally */
 }
 
 .heart {
