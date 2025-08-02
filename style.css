@@ -46,7 +46,7 @@ body {
   z-index: 1;
 }
 
-/* V seam (rotated) */
+/* Inverted V seam */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -55,13 +55,11 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-bottom: 160px solid #e58bb0;
-  transform: rotate(180deg);
-  transform-origin: center;
+  border-top: 160px solid #e58bb0; /* inverted seam */
   z-index: 2;
 }
 
-/* Flap adjusted for new orientation */
+/* Flap synced with inverted seam */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -70,16 +68,15 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-bottom: 160px solid #f497af;
-  transform: rotate(180deg);             /* initial closed position */
-  transform-origin: top center;          /* pivot at fold */
+  border-top: 160px solid #f497af; /* flap matches seam */
+  transform-origin: bottom center; /* pivot at bottom edge of flap */
   transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .flap-open {
-  transform: rotate(180deg) rotateX(180deg); /* opens upward naturally */
+  transform: rotateX(-180deg); /* opens upward naturally */
 }
 
 .heart {
