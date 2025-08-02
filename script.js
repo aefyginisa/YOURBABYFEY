@@ -4,8 +4,6 @@ const buttons = document.getElementById('buttons');
 
 function showPaper() {
   paper.classList.add('show');
-
-  // Fade out envelope and buttons after animation
   setTimeout(() => {
     envelope.style.opacity = '0';
     buttons.style.opacity = '0';
