@@ -54,7 +54,7 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-top: 160px solid #f497af; /* flipped upside-down V */
+  border-top: 160px solid #f497af;
   transform-origin: bottom center;
   transition: transform 0.6s ease;
   z-index: 4;
@@ -74,16 +74,18 @@ body {
   z-index: 5;
 }
 
-/* Paper */
+/* Paper inside envelope */
 .paper {
   position: absolute;
-  top: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 90%;
-  height: 320px;
+  height: 0;
   background: #fffafc;
   border: 4px dashed #f5b7c8;
   border-radius: 12px;
-  padding: 30px;
+  padding: 0 30px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -91,12 +93,13 @@ body {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: top 1s ease, opacity 1s ease;
+  transition: height 1s ease, opacity 1s ease;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  overflow: hidden;
 }
 
 .paper.show {
-  top: -40%;
+  height: 320px;
   opacity: 1;
   pointer-events: auto;
   z-index: 5;
