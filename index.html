@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secret Message</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Hey! You got a <u>secret message</u>. Want to <span class="highlight">open</span> it?</h1>
+
+  <div class="container">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="body"></div>
+      <div class="heart">❤️</div>
+    </div>
+
+    <div class="paper" id="paper">
+      <div class="letter-content">
+        <p>This is your life. You're allowed to change your mind. To change your heart...</p>
+        <p>You're allowed to love who you want. To move on from the people who are not good to you...</p>
+        <p>You're allowed to breathe. You are enough. 💌</p>
+      </div>
+      <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="showPaper()">Yes</button>
+    <button onclick="hidePaper()">No</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
