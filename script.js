@@ -7,7 +7,7 @@ function showPaper() {
   flap.classList.add('flap-open');
   setTimeout(() => {
     paper.classList.add('show');
-    envelope.style.opacity = '1'; /* Keep envelope visible for alignment */
+    envelope.style.opacity = '1';
     buttons.style.opacity = '0';
     buttons.style.pointerEvents = 'none';
   }, 600);
