@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>to my dearest love</title>
+  <title>Secret Message</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>hello !! you got an <u>unread message</u>. want to <span class="highlight">read</span> it now?</h1>
+  <h1>Hey! You got a <u>secret message</u>. Want to <span class="highlight">open</span> it?</h1>
 
   <div class="container">
+    <!-- Envelope -->
     <div class="envelope" id="envelope">
       <div class="flap"></div>
+      <div class="v-line"></div>
       <div class="body"></div>
       <div class="heart">❤️</div>
     </div>
 
+    <!-- Letter -->
     <div class="paper" id="paper">
       <div class="letter-content">
-        <p>This is your life. You're allowed to change your mind. To change your heart...</p>
-        <p>You're allowed to love who you want. To move on from the people who are not good to you...</p>
-        <p>You're allowed to breathe. You are enough. 💌</p>
+        <p>This is your life. You're allowed to change your mind. You're allowed to love who you want.</p>
+        <p>You're allowed to move on, to rest, to speak. You're allowed to be whoever you need to be. 💌</p>
       </div>
       <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
     </div>
-  </div>
 
-  <div class="buttons">
-    <button onclick="showPaper()">Yes</button>
-    <button onclick="hidePaper()">No</button>
+    <!-- Yes / No buttons -->
+    <div class="buttons" id="buttons">
+      <button onclick="showPaper()">Yes</button>
+      <button onclick="hidePaper()">No</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
