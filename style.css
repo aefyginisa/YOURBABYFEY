@@ -3,16 +3,17 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #ffe6f0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
-  text-align: center;
+  overflow: hidden;
 }
 
 h1 {
   color: #333;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .highlight {
@@ -21,21 +22,22 @@ h1 {
 
 .container {
   position: relative;
-  width: 400px;
+  width: 600px;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .envelope {
   position: relative;
-  width: 100%;
-  height: 250px;
-  margin: 0 auto;
-  z-index: 3;
-  pointer-events: all;
+  width: 400px;
+  height: 300px;
   transition: opacity 0.5s ease;
+  z-index: 3;
 }
 
-/* Flap of envelope */
+/* Envelope flap */
 .flap {
   position: absolute;
   top: 0;
@@ -44,11 +46,11 @@ h1 {
   height: 0;
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
-  border-bottom: 100px solid #f8a6c9;
+  border-bottom: 150px solid #f8a6c9;
   z-index: 3;
 }
 
-/* V-line to mimic envelope seam */
+/* V seam */
 .v-line {
   position: absolute;
   top: 5px;
@@ -57,36 +59,38 @@ h1 {
   height: 0;
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
-  border-top: 100px solid #e58bb0;
+  border-top: 150px solid #e58bb0;
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   z-index: 2;
 }
 
-/* Bottom body of the envelope */
+/* Envelope body */
 .body {
   width: 100%;
-  height: 150px;
+  height: 180px;
   background-color: #f8a6c9;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 16px 16px;
   position: absolute;
   bottom: 0;
   z-index: 1;
 }
 
 .heart {
-  font-size: 30px;
+  font-size: 40px;
   position: absolute;
-  bottom: 60px;
+  bottom: 80px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
 }
 
+/* Letter (paper) */
 .paper {
   position: absolute;
-  bottom: 100px;
+  bottom: 140px;
   width: 100%;
-  height: 300px;
+  max-width: 400px;
+  height: 320px;
   opacity: 0;
   transition: bottom 1s ease, opacity 1s ease;
   display: flex;
@@ -102,7 +106,7 @@ h1 {
 }
 
 .paper.show {
-  bottom: 280px;
+  bottom: 320px;
   opacity: 1;
   z-index: 5;
   pointer-events: auto;
@@ -116,9 +120,9 @@ h1 {
 }
 
 .buttons {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
   gap: 20px;
   transition: opacity 0.5s ease;
   z-index: 2;
