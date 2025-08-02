@@ -6,8 +6,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  text-align: center;
   height: 100vh;
+  text-align: center;
 }
 
 h1 {
@@ -30,46 +30,50 @@ h1 {
   width: 100%;
   height: 250px;
   margin: 0 auto;
-  transition: opacity 0.6s ease;
+  z-index: 3;
+  pointer-events: all;
+  transition: opacity 0.5s ease;
+}
+
+/* Flap of envelope */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-bottom: 100px solid #f8a6c9;
+  z-index: 3;
+}
+
+/* V-line to mimic envelope seam */
+.v-line {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 100px solid #e58bb0;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   z-index: 2;
 }
 
-.envelope .body {
+/* Bottom body of the envelope */
+.body {
   width: 100%;
   height: 150px;
   background-color: #f8a6c9;
   border-radius: 0 0 12px 12px;
   position: absolute;
   bottom: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
-.envelope .flap {
-  width: 0;
-  height: 0;
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-bottom: 100px solid #f8a6c9;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.envelope .v-line {
-  width: 0;
-  height: 0;
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-top: 100px solid #e58bb0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-}
-
-.envelope .heart {
+.heart {
   font-size: 30px;
   position: absolute;
   bottom: 60px;
@@ -93,13 +97,15 @@ h1 {
   border-radius: 20px;
   padding: 30px;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .paper.show {
   bottom: 280px;
   opacity: 1;
   z-index: 5;
+  pointer-events: auto;
 }
 
 .letter-content {
@@ -110,11 +116,12 @@ h1 {
 }
 
 .buttons {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   gap: 20px;
   transition: opacity 0.5s ease;
+  z-index: 2;
 }
 
 button {
@@ -136,4 +143,3 @@ button:hover {
   margin-top: 20px;
   background-color: #b86b8c;
 }
-
