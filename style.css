@@ -26,7 +26,6 @@ body {
   align-items: center;
 }
 
-/* Envelope */
 .envelope {
   position: relative;
   width: 500px;
@@ -47,7 +46,6 @@ body {
   z-index: 1;
 }
 
-/* Rotated V seam */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -71,14 +69,15 @@ body {
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
   border-bottom: 160px solid #f497af;
-  transform-origin: top center; /* pivot adjusted to match rotated V seam */
+  transform: rotate(180deg);
+  transform-origin: top center;
   transition: transform 0.6s ease;
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .flap-open {
-  transform: rotateX(180deg);
+  transform: rotate(180deg) rotateX(180deg);
 }
 
 .heart {
@@ -90,7 +89,6 @@ body {
   z-index: 5;
 }
 
-/* Paper inside envelope */
 .paper {
   position: absolute;
   bottom: 0;
@@ -128,7 +126,6 @@ body {
   text-align: center;
 }
 
-/* Buttons */
 .buttons {
   margin-top: 40px;
   display: flex;
