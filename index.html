@@ -7,34 +7,37 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Hey! You got a <u>secret message</u>. Want to <span class="highlight">open</span> it?</h1>
+  <div class="wrapper">
+    <h1>Hey! You got a <u>secret message</u>. Want to <span class="highlight">open</span> it?</h1>
 
-  <div class="container">
-    <!-- Envelope -->
-    <div class="envelope" id="envelope">
-      <div class="flap"></div>
-      <div class="v-line"></div>
-      <div class="body"></div>
-      <div class="heart">❤️</div>
-    </div>
-
-    <!-- Letter -->
-    <div class="paper" id="paper">
-      <div class="letter-content">
-        <p>Dear You,</p>
-        <p>I just want to say that you're special to me in ways I can’t fully express.</p>
-        <p>From the bottom of my heart — 💌</p>
+    <div class="container">
+      <!-- Envelope -->
+      <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <div class="v-line"></div>
+        <div class="body"></div>
+        <div class="heart">❤️</div>
       </div>
-      <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
-    </div>
 
-    <!-- Buttons -->
-    <div class="buttons" id="buttons">
-      <button onclick="showPaper()">Yes</button>
-      <button onclick="hidePaper()">No</button>
+      <!-- Letter -->
+      <div class="paper" id="paper">
+        <div class="letter-content">
+          <p>Dear You,</p>
+          <p>I just want to say that you're special to me in ways I can’t fully express.</p>
+          <p>From the bottom of my heart — 💌</p>
+        </div>
+        <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons" id="buttons">
+        <button onclick="showPaper()">Yes</button>
+        <button onclick="hidePaper()">No</button>
+      </div>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
