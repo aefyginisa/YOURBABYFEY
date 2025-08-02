@@ -47,7 +47,7 @@ body {
   z-index: 1;
 }
 
-/* Proper V line like an envelope fold */
+/* Rotated V seam */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -56,8 +56,9 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-top: 160px solid #e58bb0; /* slightly darker shade for depth */
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  border-bottom: 160px solid #e58bb0;
+  transform: rotate(180deg);
+  transform-origin: center;
   z-index: 2;
 }
 
