@@ -5,12 +5,12 @@ const buttons = document.getElementById('buttons');
 function showPaper() {
   paper.classList.add('show');
 
-  // Wait until letter is fully out
+  // Fade out envelope and buttons after animation
   setTimeout(() => {
     envelope.style.opacity = '0';
     buttons.style.opacity = '0';
     buttons.style.pointerEvents = 'none';
-  }, 1000); // matches the transition time
+  }, 1000);
 }
 
 function hidePaper() {
