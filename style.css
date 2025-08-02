@@ -64,14 +64,14 @@ body {
 
 .envelope-flap {
   position: absolute;
-  bottom: 100%;
+  top: 0;
   left: 0;
   width: 0;
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-top: 160px solid #f497af;
-  transform-origin: bottom center;
+  border-bottom: 160px solid #f497af;
+  transform-origin: top center; /* pivot adjusted to match rotated V seam */
   transition: transform 0.6s ease;
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
