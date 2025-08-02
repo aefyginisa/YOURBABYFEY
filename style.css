@@ -44,9 +44,10 @@ body {
   border-radius: 0 0 10px 10px;
   bottom: 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-/* Upside-down V line */
+/* Proper V line like an envelope fold */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -55,8 +56,8 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-bottom: 160px solid #e58bb0;
-  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  border-top: 160px solid #e58bb0; /* slightly darker shade for depth */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   z-index: 2;
 }
 
