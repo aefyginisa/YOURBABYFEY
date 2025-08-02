@@ -70,14 +70,14 @@ body {
   border-right: 250px solid transparent;
   border-bottom: 160px solid #f497af;
   transform: rotate(180deg);
-  transform-origin: top center;
+  transform-origin: bottom center;
   transition: transform 0.6s ease;
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
 .flap-open {
-  transform: rotate(180deg) rotateX(180deg);
+  transform: rotate(180deg) rotateX(-180deg);
 }
 
 .heart {
