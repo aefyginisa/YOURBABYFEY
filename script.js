@@ -47,13 +47,10 @@ function returnToEnvelope() {
 function moveNoButtonRandomly() {
   const container = document.querySelector('.container');
   const btn = noButton;
-
   const maxX = container.clientWidth - btn.offsetWidth;
   const maxY = container.clientHeight - btn.offsetHeight - 50;
-
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
-
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
   btn.style.position = 'absolute';
