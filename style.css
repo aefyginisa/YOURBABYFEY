@@ -59,7 +59,7 @@ body {
   z-index: 2;
 }
 
-/* Rotated flap to match inverted seam */
+/* Flap closed initially, pivot at seam */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -68,16 +68,17 @@ body {
   height: 0;
   border-left: 250px solid transparent;
   border-right: 250px solid transparent;
-  border-top: 160px solid #f497af; /* matches seam */
-  transform: rotate(180deg); /* rotated down */
+  border-top: 160px solid #f497af;
   transform-origin: top center; /* pivot at seam edge */
+  transform: rotate(0deg); /* CLOSED */
   transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
   z-index: 4;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
+/* Open state - rotates upward */
 .flap-open {
-  transform: rotate(180deg) rotateX(180deg); /* swings open upward */
+  transform: rotateX(180deg);
 }
 
 .heart {
