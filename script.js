@@ -3,7 +3,6 @@ const paper = document.getElementById('paper');
 const buttons = document.getElementById('buttons');
 const noButton = document.getElementById('noButton');
 
-// Sound elements
 const flapOpenSound = document.getElementById('flapOpenSound');
 const slideOutSound = document.getElementById('slideOutSound');
 const slideInSound = document.getElementById('slideInSound');
@@ -44,28 +43,23 @@ function hidePaper() {
 
     buttons.style.opacity = '1';
     buttons.style.pointerEvents = 'auto';
-  }, 1100);
+  }, 1000);
 }
 
 function returnToEnvelope() {
   hidePaper();
 }
 
-// Make "No" button jump to a random position
-function moveNoButton() {
+// No button moves away when clicked
+noButton.addEventListener('mouseenter', () => {
   const container = document.querySelector('.container');
-  const btn = noButton;
-
-  const containerRect = container.getBoundingClientRect();
-  const btnRect = btn.getBoundingClientRect();
-
-  const maxX = container.clientWidth - btn.offsetWidth;
-  const maxY = container.clientHeight - btn.offsetHeight;
+  const maxX = container.clientWidth - noButton.offsetWidth;
+  const maxY = container.clientHeight - noButton.offsetHeight;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
-  btn.style.position = 'absolute';
-  btn.style.left = `${randomX}px`;
-  btn.style.top = `${randomY + 200}px`; // pushes it a bit down for fun
-}
+  noButton.style.position = 'absolute';
+  noButton.style.left = `${randomX}px`;
+  noButton.style.top = `${randomY + 150}px`;
+});
