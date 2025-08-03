@@ -160,6 +160,7 @@ body {
   gap: 20px;
   transition: opacity 0.5s ease;
   position: relative;
+  height: 100px;
 }
 
 button {
@@ -175,6 +176,11 @@ button {
 
 button:hover {
   background-color: #f497af;
+}
+
+#noButton {
+  position: absolute;
+  transition: top 0.2s ease, left 0.2s ease;
 }
 
 .back-button {
