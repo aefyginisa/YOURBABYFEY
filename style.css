@@ -24,8 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 500px;
-  width: 100%;
 }
 
 .envelope {
@@ -48,6 +46,7 @@ body {
   z-index: 1;
 }
 
+/* Inverted V seam */
 .envelope-v {
   position: absolute;
   top: 0;
@@ -60,6 +59,7 @@ body {
   z-index: 2;
 }
 
+/* Flap */
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -75,6 +75,7 @@ body {
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
 }
 
+/* Flap open with bounce */
 .flap-open {
   animation: flapOpenBounce 0.8s forwards;
 }
@@ -85,6 +86,7 @@ body {
   100% { transform: rotateX(180deg); }
 }
 
+/* Flap closing with small bounce */
 .flap-close {
   animation: flapCloseBounce 0.8s forwards;
 }
@@ -104,6 +106,7 @@ body {
   z-index: 5;
 }
 
+/* Letter */
 .paper {
   position: absolute;
   bottom: 0;
@@ -124,12 +127,13 @@ body {
   pointer-events: none;
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   overflow: hidden;
-  z-index: 6;
 }
 
+/* Slide out with bounce */
 .paper.show {
   animation: letterSlideOut 1s forwards;
   pointer-events: auto;
+  z-index: 5;
 }
 @keyframes letterSlideOut {
   0%   { transform: translateX(-50%) translateY(100%); opacity: 0; }
@@ -138,9 +142,9 @@ body {
   100% { transform: translateX(-50%) translateY(0); opacity: 1; }
 }
 
+/* Slide back into envelope with dip */
 .paper.hide {
   animation: letterSlideIn 0.8s forwards;
-  pointer-events: none;
 }
 @keyframes letterSlideIn {
   0%   { transform: translateX(-50%) translateY(0); opacity: 1; }
@@ -156,18 +160,15 @@ body {
   text-align: center;
 }
 
+/* Buttons */
 .buttons {
   margin-top: 40px;
   display: flex;
   gap: 20px;
   transition: opacity 0.5s ease;
-  position: relative;
-  height: 100px;
-  width: 100%;
-  justify-content: center;
 }
 
-.buttons button {
+button {
   background-color: #f7b2c4;
   border: none;
   color: #fff;
@@ -176,16 +177,10 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease;
-  position: relative;
 }
 
-.buttons button:hover {
+button:hover {
   background-color: #f497af;
-}
-
-#noButton {
-  position: absolute;
-  transition: top 0.2s ease, left 0.2s ease;
 }
 
 .back-button {
