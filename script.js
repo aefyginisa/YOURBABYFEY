@@ -43,17 +43,16 @@ function returnToEnvelope() {
   hidePaper();
 }
 
-function avoidClick() {
-  const noButton = document.getElementById("noButton");
-  const parent = noButton.parentElement;
+function moveButton() {
+  const button = document.getElementById("noButton");
+  const parent = button.parentElement;
 
-  const maxX = parent.clientWidth - noButton.offsetWidth;
-  const maxY = parent.clientHeight - noButton.offsetHeight;
+  const maxX = parent.clientWidth - button.offsetWidth;
+  const maxY = parent.clientHeight - button.offsetHeight;
 
   const randomX = Math.floor(Math.random() * maxX);
   const randomY = Math.floor(Math.random() * maxY);
 
-  noButton.style.position = "absolute";
-  noButton.style.left = `${randomX}px`;
-  noButton.style.top = `${randomY}px`;
+  button.style.left = `${randomX}px`;
+  button.style.top = `${randomY}px`;
 }
