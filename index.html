@@ -18,12 +18,10 @@
         <div class="envelope-base"></div>
         <div class="heart">❤</div>
 
-        <!-- Letter inside envelope -->
+        <!-- Letter -->
         <div class="paper" id="paper">
           <div class="letter-content">
-            <p>Dear You,</p>
-            <p>I just want to say that you're special to me in ways I can’t fully express.</p>
-            <p>From the bottom of my heart — 💌</p>
+            <img src="shawn-ellis-note.png" alt="Cute Letter" class="letter-image">
           </div>
           <button class="back-button" onclick="returnToEnvelope()">Return to Envelope</button>
         </div>
@@ -32,12 +30,12 @@
       <!-- Buttons -->
       <div class="buttons" id="buttons">
         <button onclick="showPaper()">Yes</button>
-        <button id="noButton">No</button>
+        <button id="noButton" onclick="moveNoButton()">No</button>
       </div>
     </div>
   </div>
 
-  <!-- Sound effects -->
+  <!-- Sounds -->
   <audio id="flapOpenSound" src="flap-open.mp3"></audio>
   <audio id="slideOutSound" src="slide-out.mp3"></audio>
   <audio id="slideInSound" src="slide-in.mp3"></audio>
