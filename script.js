@@ -1,5 +1,7 @@
 const flap = document.getElementById('flap');
 const paper = document.getElementById('paper');
+const textPage = document.getElementById('textPage');
+const longLetterPage = document.getElementById('longLetterPage');
 const buttons = document.getElementById('buttons');
 const noButton = document.getElementById('noButton');
 
@@ -28,8 +30,10 @@ function showPaper() {
 }
 
 function hidePaper() {
-  paper.classList.remove('show');
-  paper.classList.add('hide');
+  [paper, textPage, longLetterPage].forEach(p => {
+    p.classList.remove('show');
+    p.classList.add('hide');
+  });
 
   slideInSound.currentTime = 0;
   slideInSound.play();
@@ -63,4 +67,34 @@ function moveNoButton() {
   btn.style.position = 'absolute';
   btn.style.left = `${randomX}px`;
   btn.style.top = `${randomY + 200}px`;
+}
+
+function goToTextPage() {
+  [paper, longLetterPage].forEach(p => p.classList.remove('show'));
+  [paper, longLetterPage].forEach(p => p.classList.add('hide'));
+
+  setTimeout(() => {
+    textPage.classList.remove('hide');
+    textPage.classList.add('show');
+  }, 400);
+}
+
+function goToImagePage() {
+  [textPage, longLetterPage].forEach(p => p.classList.remove('show'));
+  [textPage, longLetterPage].forEach(p => p.classList.add('hide'));
+
+  setTimeout(() => {
+    paper.classList.remove('hide');
+    paper.classList.add('show');
+  }, 400);
+}
+
+function goToLongLetterPage() {
+  textPage.classList.remove('show');
+  textPage.classList.add('hide');
+
+  setTimeout(() => {
+    longLetterPage.classList.remove('hide');
+    longLetterPage.classList.add('show');
+  }, 400);
 }
